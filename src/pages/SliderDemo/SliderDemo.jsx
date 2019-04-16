@@ -7,6 +7,7 @@ import {
 
 const SliderDemo = (props) => {
   const banners = [
+    `${PUBLIC_IMAGE_FOLDER}/college-wallpapers.jpg`,
     `${PUBLIC_IMAGE_FOLDER}/cloud.jpg`,
     `${PUBLIC_IMAGE_FOLDER}/default.png`,
     `${PUBLIC_IMAGE_FOLDER}/dns-server.png`,
@@ -20,7 +21,7 @@ const SliderDemo = (props) => {
         <Slider
           altText="image"
           banners={banners}
-          duration={2000}
+          duration={4000}
           random={false}
           defaultBanner={DEFAULT_BANNER_IMAGE}
         />

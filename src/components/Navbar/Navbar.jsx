@@ -6,7 +6,8 @@ import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import LockOpen from '@material-ui/icons/LockOpen';
+import Lock from '@material-ui/icons/Lock';
+import HomeIcon from '@material-ui/icons/Home';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -19,6 +20,7 @@ const styles = theme => ({
 });
 
 const routes = [
+  { path: '/home', label: 'HOME' },
   { path: '/news', label: 'NEWS' },
   { path: '/about', label: 'ABOUT' },
   // { path: '/textfielddemo', label: 'TEXTFIELD DEMO' },
@@ -41,12 +43,17 @@ class Navbar extends Component {
       to={path}
     >
       {
-        (name === "LOGOUT")
-        ? <Button color="inherit" onClick={this.handleSubmit}>
-            <LockOpen className={this.props.classes.leftIcon} />
+        (name === "LOGIN")
+          ? <Button color="inherit" onClick={this.handleSubmit}>
+              <Lock className={this.props.classes.leftIcon} />
+              {name}
+          </Button>
+          : (name === "HOME")
+          ? <Button color="inherit" onClick={this.handleSubmit}>
+            <HomeIcon className={this.props.classes.leftIcon} />
             {name}
           </Button>
-        : <Button color="inherit">{name}</Button>
+          : <Button color="inherit">{name}</Button>
       }
     </Link>
   );
@@ -60,7 +67,7 @@ class Navbar extends Component {
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" color="inherit" className={classes.grow}>
-              College Management System
+              <b>Digital Learning and Resource Planning</b>
             </Typography>
             {
               routes.map(route => (this.linkButton(route.label, route.path)))

@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import theme from './theme';
 import {
   HomePage,
-  Trainee,
+  // Trainee,
   // InputDemo,
   // ChildrenDemo,
   // SliderDemo,
